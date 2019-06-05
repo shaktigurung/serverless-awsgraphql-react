@@ -1,4 +1,6 @@
 import React from 'react';
+import EditPost from './editPost';
+import DeletePost from './deletePost';
 
 class Post extends React.Component {
 
@@ -17,15 +19,15 @@ class Post extends React.Component {
                     <time dateTime={post.createdAt}>
                     {new Date(post.createdAt).toDateString()}</time>
                     <br />
+                    <EditPost {...post} />
+                    <DeletePost {...post} />
                 </div>
 
             )
         })
 
-
     }
 
 }
-
 
 export default Post;

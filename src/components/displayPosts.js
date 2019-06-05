@@ -23,7 +23,6 @@ class DisplayPosts extends React.Component {
         })
     }
 
-
     render() {
         return (
             <div className="posts">
@@ -37,13 +36,9 @@ class DisplayPosts extends React.Component {
                             this.subsCribeNewPosts(subscribeToMore)} />
                     }}
                 </Query>
-
-
-
             </div>
         )
     }
 }
-
 
 export default DisplayPosts;
