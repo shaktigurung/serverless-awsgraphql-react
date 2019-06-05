@@ -1,0 +1,14 @@
+{
+    "serverless": {
+        "awscloudformation": {
+            "AuthRoleName": "awsgraphql-react-20190605122129-authRole",
+            "UnauthRoleArn": "arn:aws:iam::959393048008:role/awsgraphql-react-20190605122129-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::959393048008:role/awsgraphql-react-20190605122129-authRole",
+            "Region": "ap-southeast-2",
+            "DeploymentBucketName": "awsgraphql-react-20190605122129-deployment",
+            "UnauthRoleName": "awsgraphql-react-20190605122129-unauthRole",
+            "StackName": "awsgraphql-react-20190605122129",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:959393048008:stack/awsgraphql-react-20190605122129/a1680d20-8738-11e9-b24f-0ae74239a372"
+        }
+    }
+}
