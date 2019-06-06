@@ -39,14 +39,13 @@ class DeletePost extends Component {
                 ];
 
                 //Overwrite the cache with the new results
-                cache.writeQuery({ query, data });
+                cache.writeQuery({ query, data: [data.listPosts.items]});
             }
         })
     }
 
     render() {
-        console.log("props", this.props)
-        //const deletePost = this.props.deletePost
+       
         return (
             <Mutation mutation={gql(deletePost)}>
                 {( deletePost, { loading, error }) => {

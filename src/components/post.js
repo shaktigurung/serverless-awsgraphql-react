@@ -11,10 +11,9 @@ class Post extends React.Component {
 
     render() {
         const items = this.props.data.listPosts.items;
-
         return items.map((post) => {
             return (
-                <div >
+                <div key={post.id}>
                     <div className="card">
                         <div className="container">
                             <h4><b>{post.title}</b></h4> 
@@ -26,12 +25,9 @@ class Post extends React.Component {
                         </div>
                     </div>
                 </div>
-
             )
         })
-
     }
-
 }
 
 export default Post;

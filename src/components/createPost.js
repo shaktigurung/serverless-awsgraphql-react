@@ -3,6 +3,7 @@ import { Mutation } from "react-apollo";
 import { createPost } from "./../graphql/mutations";
 import gql from "graphql-tag";
 import './../styles/createPost.css';
+import CreateNewFolderIcon from '@material-ui/icons/CreateNewFolder'
 
 class CreatePost extends React.Component {
   handleSubmit = (e, createPost) => {
@@ -24,7 +25,6 @@ class CreatePost extends React.Component {
     return (
       <div>
         <h1>Create post</h1>
-
         <Mutation mutation={gql(createPost)}>
           {(createPost, { data, loading, error }) => {
             return (
@@ -46,8 +46,7 @@ class CreatePost extends React.Component {
                     ref={node => (this.body = node)}
                     required
                   />
-                  <button>{loading ? "Yes boss..." : "Create Post"}
-                  </button>
+                  <button>  {loading ? "Yes boss..." : <CreateNewFolderIcon />} </button>
                 </form>
                 {error && <p>{error.message}</p>}
               </div>

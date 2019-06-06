@@ -3,6 +3,8 @@ import { updatePost } from "./../graphql/mutations";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
 import EditIcon from '@material-ui/icons/Edit';
+import CloseIcon from '@material-ui/icons/Close';
+import UpdateIcon from '@material-ui/icons/Update';
 
 class EditPost extends React.Component {
   state = {
@@ -49,8 +51,8 @@ class EditPost extends React.Component {
       <>
         {this.state.show && (
           <div className="modal">
-            <button className="close" onClick={this.handleModal}>
-              X
+             <button className="close" onClick={this.handleModal}>
+              <CloseIcon /> 
             </button>
             <Mutation mutation={gql(updatePost)}>
               {updatePost => {
@@ -72,7 +74,7 @@ class EditPost extends React.Component {
                       value={this.state.postData.body}
                       onChange={this.handleBody}
                     />
-                    <button>Update Post</button>
+                    <button> <UpdateIcon /> </button>
                   </form>
                 );
               }}
