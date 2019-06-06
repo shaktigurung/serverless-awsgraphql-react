@@ -4,7 +4,8 @@ import { listPosts } from './../graphql/queries';
 import { onCreatePost } from './../graphql/subscriptions'
 import gql from 'graphql-tag';
 import Post from './post';
-import './../styles/displayPosts.css'
+import './../styles/displayPosts.css';
+import Grid from '@material-ui/core/Grid';
 
 
 class DisplayPosts extends React.Component {
@@ -27,7 +28,7 @@ class DisplayPosts extends React.Component {
 
     render() {
         return (
-            <div className="collection">
+            <Grid container>
                 <Query query={gql(listPosts)}  >
                     {({ loading, data, error, subscribeToMore }) => {
 
@@ -38,7 +39,7 @@ class DisplayPosts extends React.Component {
                             this.subsCribeNewPosts(subscribeToMore)} />
                     }}
                 </Query>
-            </div>
+            </Grid>
         )
     }
 }

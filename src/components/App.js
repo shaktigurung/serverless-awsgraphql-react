@@ -5,11 +5,13 @@ import DisplayPosts from './../components/displayPosts';
 
 function App() {
   return (
-    <div className="App">
-      <h1> Serverless Backend </h1> 
-      <CreatePost />
-      <DisplayPosts />
-    </div>
+    <>
+      <div className="App">
+        <h1> Serverless Backend </h1> 
+        <CreatePost />
+        <DisplayPosts />
+      </div>
+    </>
   );
 }
 

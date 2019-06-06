@@ -23,8 +23,8 @@ class CreatePost extends React.Component {
   };
   render() {
     return (
-      <div>
-        <h1>Create post</h1>
+      <>
+        <h1> Hacker News </h1>
         <Mutation mutation={gql(createPost)}>
           {(createPost, { data, loading, error }) => {
             return (
@@ -34,7 +34,8 @@ class CreatePost extends React.Component {
                   onSubmit={e => this.handleSubmit(e, createPost)}
                 >
                   <input
-                    type="text" placeholder="Title"
+                    type="text" 
+                    placeholder="Title"
                     ref={node => (this.title = node)}
                     required
                     className = "input-post"
@@ -46,14 +47,14 @@ class CreatePost extends React.Component {
                     ref={node => (this.body = node)}
                     required
                   />
-                  <button>  {loading ? "Yes boss..." : <CreateNewFolderIcon />} </button>
+                  <button>  <CreateNewFolderIcon /> </button>
                 </form>
                 {error && <p>{error.message}</p>}
               </div>
             );
           }}
         </Mutation>
-      </div>
+      </>
     );
   }
 }
