@@ -3,11 +3,12 @@ import { Mutation } from 'react-apollo';
 import { deletePost } from './../graphql/mutations';
 import gql from 'graphql-tag';
 import { listPosts } from './../graphql/queries';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 class DeletePost extends Component {
 
     handleDelete = (deletePost) => {
-        console.log("the Delete Post id", this.props.id);
+        console.log("the Delete Post title", this.props.title);
         deletePost({
             variables: {
                 input: {
@@ -44,12 +45,13 @@ class DeletePost extends Component {
     }
 
     render() {
+        console.log("props", this.props)
+        //const deletePost = this.props.deletePost
         return (
             <Mutation mutation={gql(deletePost)}>
-                {(deletePost, { loading, error }) => {
-                    return <button onClick={
-                       () => this.handleDelete(deletePost)}>
-                        Delete Post</button>
+                {( deletePost, { loading, error }) => {
+                    return <DeleteIcon style={{cursor: "pointer"}} onClick={
+                       () => this.handleDelete(deletePost)} />
                 }}
             </Mutation>
         )

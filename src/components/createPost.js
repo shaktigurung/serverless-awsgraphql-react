@@ -2,6 +2,7 @@ import React from "react";
 import { Mutation } from "react-apollo";
 import { createPost } from "./../graphql/mutations";
 import gql from "graphql-tag";
+import './../styles/createPost.css';
 
 class CreatePost extends React.Component {
   handleSubmit = (e, createPost) => {
@@ -36,6 +37,7 @@ class CreatePost extends React.Component {
                     type="text" placeholder="Title"
                     ref={node => (this.title = node)}
                     required
+                    className = "input-post"
                   />
                   <textarea
                     rows="3"

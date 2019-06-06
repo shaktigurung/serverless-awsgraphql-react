@@ -2,6 +2,7 @@ import React from "react";
 import { updatePost } from "./../graphql/mutations";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
+import EditIcon from '@material-ui/icons/Edit';
 
 class EditPost extends React.Component {
   state = {
@@ -78,7 +79,7 @@ class EditPost extends React.Component {
             </Mutation>
           </div>
         )}
-        <button onClick={this.handleModal}>Edit</button>
+        <EditIcon style={{cursor: "pointer"}} onClick={this.handleModal} />
       </>
     );
   }

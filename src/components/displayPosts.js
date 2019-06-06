@@ -4,6 +4,8 @@ import { listPosts } from './../graphql/queries';
 import { onCreatePost } from './../graphql/subscriptions'
 import gql from 'graphql-tag';
 import Post from './post';
+import './../styles/displayPosts.css'
+
 
 class DisplayPosts extends React.Component {
 
@@ -25,7 +27,7 @@ class DisplayPosts extends React.Component {
 
     render() {
         return (
-            <div className="posts">
+            <div className="collection">
                 <Query query={gql(listPosts)}  >
                     {({ loading, data, error, subscribeToMore }) => {
 
